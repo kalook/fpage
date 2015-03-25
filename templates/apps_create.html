@@ -1,0 +1,144 @@
+{%  extends 'admin_base.html' %}
+{% block external %}
+<link rel="stylesheet" href="/stylesheet/themes/base/jquery.ui.all.css">
+<link href="/scripts/smarteditor/css/default.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/scripts/smarteditor/js/HuskyEZCreator.js"></script>
+
+  <script src="/scripts/jquery-1.8.0.js"></script>
+  <script>
+  $(function() {
+    $(".check_url").click(function(){
+      var url = {'url':$("#direct_url").val()};
+      
+      $.post("/admin/apps/ajax/",url,function(result){
+        console.log(result);
+        if (result=="exist_url"){
+          alert("중복된 주소 입니다.");
+          return false;
+        }
+        var data = jQuery.parseJSON(result);
+        // console.log(data.logo);
+        // console.log(data.cover);
+        // console.log(data.app_name);
+        // console.log(data.category);
+        //console.log(data.platform);
+        //console.log(data.app_info_long);
+        $(".profile_wrap").html("");
+        $(".cover_wrap").html("");
+        $("input[name=App_type]").filter('input[value='+data.platform+']').attr("checked",true);
+        $("#appname").attr("value",data.app_name);
+        $(".profile_wrap").append('<br/><img src='+data.logo+' />');
+        $(".cover_wrap").append('<br/><img src='+data.cover+' />');
+        $("#info").attr("value",data.app_info_short);
+        $("textarea#detail").val(data.app_info_long);
+        $("#profile_load").attr("value",data.logo);
+        $("#cover_load").attr("value",data.cover);
+        $("#category").val(data.category).attr("selected", "selected");
+      });
+
+    });
+  });
+  </script>
+{% endblock %}
+{%  block content %}
+
+<form method="POST" action="." enctype="multipart/form-data">
+<input type="hidden" value="" id="profile_load" name="profile_load" />
+<input type="hidden" value="" id="cover_load" name="cover_load" />
+
+<table>
+  <tbody>
+
+    <tr>
+      <th width="20%">* 바로가기 주소</th>
+      <td>
+        <input type="text" value="" id="direct_url" name="direct_url" style="width:500px" />
+        <input type="button" value="확인" class="check_url" name="check_url"/>
+      </td>
+    </tr>
+    <tr>
+      <th>* TYPE</th>
+      <td>
+        <input type="radio" value="All" name="App_type" id="App_type" />All
+        <input type="radio" value="Web" name="App_type" id="App_type" />Web
+        <input type="radio" value="Mobile" name="App_type" id="App_type" />Mobile
+      </td>
+    </tr>
+    <tr>
+      <th>카테고리</th>
+      <td>
+        <select name="category" id="category">
+          <option value="">선택하세요</option>
+
+          {% for list in category %}
+          <option value="{{(list.category)}}">{{list.category}}</option>
+          {% endfor %}
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th>App이름</th>
+      <td><input type="text" value="" id="appname" name="appname"/></td>
+    </tr>
+    <tr>
+      <th>프로필 이미지</th>
+      <td><div class="profile_wrap"></div><input type="file" id="profile" name="profile"/></td>
+    </tr>
+    <tr>
+      <th>커버 이미지</th>
+      <td><div class="cover_wrap"></div><input type="file" id="cover" name="cover"/></td>
+    </tr>
+   
+    <tr>
+      <th>App 소개(목록)</th>
+      <td>
+        <input type="text" value="" id="info" name="info" style="width:80%"/>
+      </td>
+    </tr>
+    <tr>
+      <th>App 소개(상세)</th>
+      <td><!-- class="ckeditor" -->
+        <textarea id="detail" name="detail"  cols="100" style="width:80%;height:200px;"></textarea>
+      </td>
+    </tr> 
+    <tr>
+      <th>App 소개(목록)[한글]</th>
+      <td>
+        <input type="text" value="" id="info_kor" name="info_kor" style="width:80%"/>
+      </td>
+    </tr>
+    <tr>
+      <th>App 소개(상세)[한글]</th>
+      <td><!-- class="ckeditor" -->
+        <textarea id="detail_kor" name="detail_kor"  cols="100" style="width:80%;height:200px;display:none;"></textarea>
+      </td>
+    </tr>    
+    <tr>
+      <td colspan="2"><input type="submit" class="btn"  onclick="_onSubmit(this)" value="등록"/></td>
+    </tr>
+
+  </tbody>
+</table>
+</form>
+<script type="text/javascript">
+  var imagepath = "/files/events";
+  var oEditors = [];
+  nhn.husky.EZCreator.createInIFrame({
+      oAppRef: oEditors,    
+      elPlaceHolder: "detail_kor",
+      sSkinURI: "/scripts/smarteditor/SEditorSkin.html",
+      fCreator: "createSEditorInIFrame",
+      uploadCode: "events"
+  });
+  function _onSubmit(elClicked){
+      oEditors.getById["detail_kor"].exec("UPDATE_IR_FIELD", []);
+      elClicked.form.submit();
+    }
+    function insertIMG(irid,fileame){
+      var sHTML = "<a href='https://fpage.kr" + imagepath + "/" + fileame + "' target='_blank'>";
+      sHTML += "<img src='https://fpage.kr" + imagepath + "/" + fileame + "' border='0'></a>";
+      oEditors.getById[irid].exec("PASTE_HTML", [sHTML]);
+    }
+</script>
+{% endblock %}
+{% block add %}{% endblock %}

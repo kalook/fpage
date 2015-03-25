@@ -1,0 +1,967 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="generator" content="Textcube 1.8.2 : Secondary dominant" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta http-equiv="Keywords" content="" />
+<link rel="alternate" type="application/rss+xml" title="" href="http://xinet.kr/tc/rss" />
+<link rel="alternate" type="application/rss+xml" title=" : comments" href="http://xinet.kr/tc/rss/comment" />
+<link rel="alternate" type="application/rss+xml" title=" : trackbacks" href="http://xinet.kr/tc/rss/trackback" />
+<link rel="alternate" type="application/rss+xml" title=" :  comments + trackbacks" href="http://xinet.kr/tc/rss/response" />
+<link rel="alternate" type="application/atom+xml" title="" href="http://xinet.kr/tc/atom" />
+<link rel="alternate" type="application/atom+xml" title=" : comments" href="http://xinet.kr/tc/atom/comment" />
+<link rel="alternate" type="application/atom+xml" title=" : trackbacks" href="http://xinet.kr/tc/atom/trackback" />
+<link rel="alternate" type="application/atom+xml" title=" :  comments + trackbacks" href="http://xinet.kr/tc/atom/response" />
+<link rel="stylesheet" media="screen" type="text/css" href="/tc/skin/blog/ReinerSchwarzKoreanisch/style.css" />
+<link rel="stylesheet" media="print" type="text/css" href="/tc/skin/blog/ReinerSchwarzKoreanisch/images/print.css" />
+<link rel="shortcut icon" href="/tc/favicon.ico" />
+<title>  :: WGET 옵션 정리</title>
+<script type="text/javascript" src="/tc/resources/script/jquery/jquery-1.4.js"></script>
+<script type="text/javascript">jQuery.noConflict();</script>
+<script type="text/javascript" src="/tc/resources/script/EAF4.js"></script>
+<!-- script type="text/javascript" src="/tc/resources/script/EAF4.js"></script -->
+<script type="text/javascript" src="/tc/resources/script/common2.js"></script>
+<script type="text/javascript" src="/tc/resources/script/gallery.js" ></script>
+<script type="text/javascript" src="/tc/resources/script/flash.js" ></script>
+<link rel="stylesheet" href="http://xinet.kr/tc/resources/style/system.css" type="text/css" media="screen" />
+<link rel="alternate" type="application/rss+xml" title="Responses (RSS) : WGET 옵션 정리 - " href="http://xinet.kr/tc/rss/response/147" />
+<link rel="alternate" type="application/atom+xml" title="Responses (ATOM) : WGET 옵션 정리 - " href="http://xinet.kr/tc/atom/response/147" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://xinet.kr/tc/api?rsd" />
+<!-- 
+	J.Parker Thumbnail List/Sidebar/Cover View Plugin v1.9.0312 for Textcube v1.6.3 ~ v1.8.* - http://create74.com
+	DQ'Thumb Engine ver 2.0 R5.0306 for developer - http://www.dqstyle.com
+-->	
+<link rel="stylesheet" media="screen" type="text/css" href="/tc/plugins/MT_Meta_RecentPS_Default/style.css" />
+<script type="text/javascript" src="/tc/plugins/myEolin/eolin_plugin.js"></script>
+<link rel="stylesheet" type="text/css" href="/tc/plugins/myEolin/myEolin.css" />
+<script language="JavaScript" type="text/javascript">
+//<![CDATA[
+	var apiEolinURL = new Array();
+	var pluginURL = "/tc/plugins/myEolin";
+	function bookMarkEolin(id,permalink,gubun) {
+		var getEntryURL = "/tc/plugin/getSaveEolin/?id="+id;
+		var bookmarkdata  = requestHttpText(getEntryURL);
+
+		if(bookmarkdata == "0"){
+			alert("비공개글입니다");
+		}else{
+			if(document.getElementsByTagName('body')[0]!= undefined){
+				viewBookmarkForm(bookmarkdata+"&url="+encodeURIComponent(permalink),gubun);
+			}else{
+				if (document.getSelection){
+					description=document.getSelection();
+				}else if(document.selection && document.selection.createRange) {
+					var range = document.selection.createRange(); 
+					var description = range.text;
+				}else{
+					var description='';
+				}
+			
+				if(gubun =="bookmark"){	
+				window.open('http://www.eolin.com/bookmark/post.php?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)+'&description='+encodeURIComponent(description));
+				}else{
+				window.open('http://www.eolin.com/bookmark/vote.php?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)+'&description='+encodeURIComponent(description));
+				}
+			}
+		}
+	}
+ //]]>
+</script>
+</head>
+
+<body id="tt-body-entry">
+	<!--
+		Textcube 1.8.2 : Secondary dominant
+
+		Homepage: http://www.textcube.org/
+		Copyright &copy; 2004-2010. Needlworks / Tatter Network Foundation. All rights reserved. Licensed under the GPL.
+	-->
+	<script type="text/javascript">
+	//<![CDATA[
+		var servicePath = "/tc";
+		var blogURL = "/tc";
+		var prevURL = "/tc/148";
+		var nextURL = "/tc/146";
+		var commentKey = "abd26903d623079271786c52fb68c56e";
+		var doesHaveOwnership = false;
+		var isReaderEnabled = true;
+		var messages = {
+			"trackbackUrlCopied": "엮인글 주소가 복사되었습니다.",
+			"operationFailed": "실패했습니다.",
+			"confirmTrackbackDelete": "선택된 글걸기를 삭제합니다. 계속 하시겠습니까?",
+			"confirmEntryDelete": "이 글 및 이미지 파일을 완전히 삭제합니다. 계속 하시겠습니까?",
+			"onSaving": "저장하고 있습니다"
+		}
+	//]]>
+	</script>
+	<script type="text/javascript">
+		//<![CDATA[
+			document.onkeydown = processShortcut;
+		//]]>
+	</script>
+<div style="position:absolute;top:0;left:0; background-color:transparent;background-image:none">
+<script type="text/javascript">
+//<![CDATA[
+	AC_FL_RunContent(
+		'codebase','http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0',
+		'width','1',
+		'height','1',
+		'id','clipboardPoter',
+		'src','/tc/resources/script/clipboardPoter/clipboardPoter',
+		'wmode','transparent',
+		'name','clipboardPoter',
+		'allowscriptaccess','sameDomain',
+		'pluginspage','http://www.macromedia.com/go/getflashplayer',
+		'movie','/tc/resources/script/clipboardPoter/clipboardPoter',
+		'flashvars', 'callback=onClipBoard'
+	);
+	window.clipboardPoter = document.getElementById("clipboardPoter");
+//]]>
+</script>
+</div>
+ 	<div id='bookmark_handle' style='display:none;position:absolute; top:10px; left:105px; height:570px; width:550px; z-index:9999999; background:#FFF url(http://file.eolin.com/image/plugin_pop.gif)  left top repeat-x; border:1px solid #666;'>
+	<div id='mini_bookmark_handle' style='background:url(http://file.eolin.com/image/plugin_logo.gif) 3px 3px no-repeat; text-align:left; z-index:9999998; width:432px; height:48px; cursor:move; float:left'></div>
+	<div id='mini_close' style='margin:11px 10px 0 0; float:right'><a href='javascript:closePopup()' title='close'><img src='http://file.eolin.com/image/icon_close.gif' border='0'  alt='close' /></a></div>
+	<div style='clear:both;'><iframe id="eolin_iframe" src='about:blank' width='550' height='500' scrolling='no' frameborder='no'></iframe></div>
+    </div>
+
+<div id="headerBox">
+	<div id="header">
+		<h1><a href="/tc/" title=""></a></h1>
+		<div class="blogMenu">
+			<a href="/tc/">메인페이지</a> | 
+			<a href="/tc/cover">메타</a> | 
+			<a href="/tc/notice">공지</a> | 
+			<a href="/tc/line">라인</a> | 
+			<a href="/tc/tag">태그</a> | 
+			<a href="/tc/location">지역 태그</a> | 
+			<a href="/tc/keylog">키워드</a> | 
+			<a href="/tc/guestbook">방명록</a>
+		</div>
+	</div>
+</div>
+<!-- header close -->
+<hr />
+	<div id="container">
+		<div id="content">
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			<div class="hfeed"><a id="entry_147"></a>
+<div class="hentry">
+
+				<div class="entry">
+					<div class="titleWrap">
+						<h2><a href="/tc/147" class="entry-title" rel="bookmark" title="WGET 옵션 정리">WGET 옵션 정리</a></h2>
+						<span class="date">2011/07/18 11:23</span> /
+						<span class="category"><a href="/tc/category/11">리눅스/일반</a> </span><br />
+						
+					</div><!-- titleWrap End -->
+
+					<div class="article entry-content">
+						<span class="Apple-style-span" style="color: rgb(51, 51, 51); font-family: 돋움, Dotum, AppleGothic, sans-serif; line-height: 16px; "><div class="contentWarp" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); width: 669px; overflow-x: hidden; "><table cellspacing="0" cellpadding="0" border="0" class="qnaContentTable" id="clix_acontent_3z5Sv"><tbody><tr><td class="tx-content-container" style="font-family: AppleGothic, Gulim; color: rgb(0, 0, 0); font-size: 13px; line-height: 1.7; word-break: break-all; "><font size="2"><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><strong><span style="font-family: Dotum, 돋움; ">설명</span></strong><span style="font-family: Dotum, 돋움; ">&nbsp;</span><br><span style="font-family: Dotum, 돋움; ">GNU wget은 상호작용을 필요로 하지 않는 다운로드 프로그램으로 Web으로 부터 파일들을 가져올 수 있다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">HTTP, HTTPS, FTP 프로토콜을 지원하며, HTTp proxy에서 데이터를 가져올 수도 있다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">&nbsp;</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">wget이 상호작용을 필요로 하지 않는다는 것은, 백그라운드 상태에서 작동할 수 있음을 의미한다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">사용자는 로그인을 하지 않은 상태에서도 cron이나 Damon을 이용 wget을 실행시킬 수 있다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">또한 coo-kie, Form action을 지원해서 사용자 액션을 시뮬레이션 할 수도 있다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><br><span style="font-family: Dotum, 돋움; ">wget은 HTML과 XHTML 페이지를 다운로드 받아서 로컬 파일시스템에 저장한다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">이때 파일이름과 디렉토리 구조까지를 그대로 로컬시스템에 구축함으로써, backup, mirror 사이트 구축등에 사용할 수도 있다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">또한 recursive 다운로드를 지원해서, 사이트 전체를 쉽게 내려받을 수 있다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">&nbsp;</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">wget은 느리거나 불안정한 네트워크 환경에서도 매우 잘 작동하는 견고한 프로그램이다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">네트워크 환경이 불안해서 도중에 연결이 끊겼다면, 연결이 끊긴 시점부터 다운로드 받는 기능도 가지고 있다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><br><span style="font-family: Dotum, 돋움; "><strong style="font-family: null; ">옵션</strong></span><span style="font-family: Dotum, 돋움; ">&nbsp;</span><br><span style="font-family: Dotum, 돋움; ">Start Up </span><br><span style="font-family: Dotum, 돋움; ">-V, --version</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">wget의 버전을 보여주고 종료한다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><br><span style="font-family: Dotum, 돋움; ">-h, --help</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">도움말을 보여준다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><br><span style="font-family: Dotum, 돋움; "><strong style="font-family: null; ">-b, --background</strong></span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">백그라운드에서 작동하도록 한다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">&nbsp;</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">-e, --execute=COMMAND</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">.wgetrc를 읽어서 명령을 실행한다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><br><span style="font-family: Dotum, 돋움; ">Logging and input file </span><br><span style="font-family: Dotum, 돋움; ">-o, --output-file=FILE</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">메시지들을 파일로 남긴다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><br><span style="font-family: Dotum, 돋움; ">-a, --append-output=FILE</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">메시지들을 파일에 추가한다</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">&nbsp;</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">-d, --debug</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">디버그 내용을 출력한다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">&nbsp;</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">-q, --quiet</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">메시지들을 표준출력하지 않는다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">&nbsp;</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">-nv, --non-verbose</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">기본옵션을 제거한다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><br><span style="font-family: Dotum, 돋움; ">-i, --input-file=FILE</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">다운로드 받을 URL주소를 파일에서 찾는다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">&nbsp;</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">-F, --force-html</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">HTML과 같은 파일을 입력값으로 취급한다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><br><span style="font-family: Dotum, 돋움; ">-B, --base=URL, --sslcertfile=FILE, --sslcertkey=KEYFILE</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">파일이나 링크들의 SSL인증을 위해서 URL, keyfile을 사용한다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">&nbsp;</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">&nbsp;</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><strong><span style="font-family: Dotum, 돋움; ">다운로드 </span><br></strong><span style="font-family: Dotum, 돋움; ">--bind-address=ADDRESS</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">로컬 호스트의 주소를 설정한다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">&nbsp;</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">-t, --tries=NUMBER</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">설정한 숫자 만큼 다시 시도한다. 0은 무한대</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">&nbsp;</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">-O, --output-doc-ument=FILE</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">문서를 파일로 쓴다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">&nbsp;</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">-c, --continue</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">연결이 끊긴 시점부터, 이어서 파일을 다운로드 받는다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">&nbsp;</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">-N, --timestamping</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">로컬에 있는 것보다, 새롭지 않으면 파일을 다시 받지 않는다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">&nbsp;</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">-S, --server-response</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">서버의 응답을 출력한다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><br><span style="font-family: Dotum, 돋움; ">--spider</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">다운로드 하지 않는다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><br><span style="font-family: Dotum, 돋움; ">-T, timeout=SECONDS</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">종료된 시간을 초단위로 설정한다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">&nbsp;</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">-w, --wait=SECONDS</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">연결을 위해 기다리는 시간을 초단위로 설정한다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><br><span style="font-family: Dotum, 돋움; ">-Y, --proxy=on/off</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">프락시 모드를 켜고 끈다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">&nbsp;</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">-Q, --quota=NUMBER</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">숫자만큼 분담하도록 설정한다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">&nbsp;</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><br><span style="font-family: Dotum, 돋움; "><strong style="font-family: null; ">디렉토리 관리 <br></strong></span><span style="font-family: Dotum, 돋움; ">-nd, --no-directories</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">디렉토리를 생성하지 않는다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">&nbsp;</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">-x, --force-directories</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">디렉토리를 강제로 생성한다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">&nbsp;</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">-nH, --no-host-directories</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">호스트 이름의 디렉토리를 생성하지 않는다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><br><span style="font-family: Dotum, 돋움; ">-P, --directory-prefix=PREFIX</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">파일들이 저장될 디렉토리를 지정한다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">&nbsp;</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><br><span style="font-family: Dotum, 돋움; "><strong style="font-family: null; ">HTTP 옵션</strong></span><span style="font-family: Dotum, 돋움; ">&nbsp;</span><br><span style="font-family: Dotum, 돋움; ">--http-user=USER</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">http 유저 아이디를 설정한다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">&nbsp;</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">--http-passwd=PASS</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">http 패스워드 암호를 설정한다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">&nbsp;</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">-C, --cache=on/off</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">서버측의 캐쉬 데이터를 허용하는게 보통이나, 제거할 수도 있다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><br><span style="font-family: Dotum, 돋움; ">-E, --html-extension</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">모든 text/html 형식의 문서들과 .html 파일을 같이 확장해서 저장한다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><br><span style="font-family: Dotum, 돋움; ">-s, --save-headers</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">파일에 HTTP헤더를 저장한다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><br><span style="font-family: Dotum, 돋움; ">-U, --user-agent=AGENT</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">Wget이 아닌, 다른 브라우저로 AGENT를 설정한다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><br><span style="font-family: Dotum, 돋움; ">--no-http-keep-alive</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">HTTP의 keep-alive를 제거한다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><br><span style="font-family: Dotum, 돋움; ">--coo-kies=off</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">coo-kie를 사용하지 않는다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><br><span style="font-family: Dotum, 돋움; ">--load-coo-kies=FILE</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">쿠키의 값을 파일에서 읽어들인다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><br><span style="font-family: Dotum, 돋움; ">--save-coo-kies=FILE</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">세션이 끝난 이후 전달받은 coo-kie값을 저장한다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><br><span style="font-family: Dotum, 돋움; "><strong style="font-family: null; ">FTP 옵션 <br></strong></span><span style="font-family: Dotum, 돋움; ">-nr, --dont-remove-listing</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">.listing 파일에 있는건 지우지 않는다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><br><span style="font-family: Dotum, 돋움; ">-g, --glob=on/off</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">하나의 파일이름으로 할지를 결정한다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><br><span style="font-family: Dotum, 돋움; ">--passive-ftp</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">passive 모드로 전송한다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">&nbsp;</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">--retr-symlinks</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">복구중에 링크가 걸린 파일을 가져온다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><br><span style="font-family: Dotum, 돋움; "><strong style="font-family: null; ">Recursive retrie-val</strong></span><span style="font-family: Dotum, 돋움; ">&nbsp;</span><br><span style="font-family: Dotum, 돋움; ">-r, --recursive</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">웹데이터를 재귀적으로 가져온다. 대상 웹서버에 무리를 줄 수 있으니, 주의해서 사용해야 한다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">&nbsp;</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">-l, --level=NUMBER</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">--delete-after</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">다운로드 받은후 로컬파일을 삭제한다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><br><span style="font-family: Dotum, 돋움; ">-k, convert-links</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">관계없는 링크를 관련있는 링크로 변환한다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><br><span style="font-family: Dotum, 돋움; ">-K, --backup-converted</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">변환하기 전에, 원본파일을 .orig 파일로 백업한다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">&nbsp;</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">-m, --mirror</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">&nbsp;</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">-r -N -l inf -nr 옵션과 사용할 수 있다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">&nbsp;</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">-p, --page-requisites</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">모든 이미지와 HTML 페이지등을 가져온다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><br><span style="font-family: Dotum, 돋움; "><strong style="font-family: null; ">Recursive accept/reject</strong></span><span style="font-family: Dotum, 돋움; ">&nbsp;</span><br><span style="font-family: Dotum, 돋움; ">-A, --accept=LIST</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">받아들일 것을 확장하기 위해서 콤마로 분리된 리스트로 받아들인다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><br><span style="font-family: Dotum, 돋움; ">-R, --reject=LIST</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">받아들이지 않을 것을 콤마로 분리된 리스트로 받아들인다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">&nbsp;</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">-D, --domains=LIST</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">받아들일 도메인을 콤마로 분리된 리스트로 받아들인다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">&nbsp;</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">--exclude-domains=LIST</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">거절할 도메인을 콤마로 분리된 리스트로 받아들인다</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">&nbsp;</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">--follow-ftp</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">HTML 문서에서의 FTP 링크를 따라간다</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><br><span style="font-family: Dotum, 돋움; ">--follow-tags=LIST</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">HTML태그에서 따라갈 콤마로 분리된 리스트로 받아들인다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><br><span style="font-family: Dotum, 돋움; ">-G, --ignor-tags</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">무시할 HTML 태그를 콤마로 분리된 리스트로 받아들인다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><br><span style="font-family: Dotum, 돋움; ">-H, --span-hosts</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">반복할때에 다른 호스트로도 가게 한다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><br><span style="font-family: Dotum, 돋움; ">-L, --relative</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">관계있는 링크만 따라간다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><br><span style="font-family: Dotum, 돋움; ">-l, --include-directories=LIST</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">허용할 디렉토리를 리스트로 받아들인다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><br><span style="font-family: Dotum, 돋움; ">-nh, --no-host-lookup</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">DNS의 검색 호스트를 사용하지 않는다.</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><br><span style="font-family: Dotum, 돋움; ">-np, --no-parent</span></div><div style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); "><span style="font-family: Dotum, 돋움; ">상위 디렉토리를 올라가지 않도록 한다.</span></div></font></td></tr></tbody></table></div><div class="etcLinkArea clearfix" style="padding-top: 23px; padding-right: 0px; padding-bottom: 9px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(51, 51, 51); display: inline-block; width: 669px; clear: both; "><div class="fl fc_g3" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; color: rgb(153, 153, 153); float: left; font: normal normal normal 11px/normal AppleGothic, Dotum; "><span class="bar" style="color: rgb(224, 224, 224); padding-top: 0px; padding-right: 2px; padding-bottom: 0px; padding-left: 1px; font: normal normal normal 11px/normal AppleGothic, Dotum; ">|</span>&nbsp;출처 : <a href="http://k.daum.net/qna/view.html?qid=3ysTB" class="fs_11 fc_g3" style="color: rgb(153, 153, 153); font: normal normal normal 11px/normal AppleGothic, Dotum; font-size: 12px; font-family: 돋움, Dotum, AppleGothic, sans-serif; text-decoration: none; ">http://www.joinc.co.kr/module...</a></div></div></span><div class="EolinBmVote"><span class="EolinBookmarkBtn"><a href="#void"  title="이올린에 북마크하기" onclick="bookMarkEolin(147, 'http://xinet.kr/tc/147', 'bookmark');return false;"><img src="/tc/plugins/myEolin/images/bookmarkToEolin.gif" border="0" alt="이올린에 북마크하기" style="vertical-align:middle;" /></a></span></div>
+					</div>
+					<div style="display:none">
+					<abbr class="updated" title="2011-07-18T11:23:26+09:00">2011/07/18 11:23</abbr>
+					<abbr class="published" title="2011-07-18T11:23:26+09:00">2011/07/18 11:23</abbr>
+					</div>
+					<div class="author">
+						<cite>시골청년</cite> <span><dfn>이 작성</dfn>.</span>
+					</div>
+
+					
+
+					<div class="actionTrail">
+							<a id="trackbackCount147" href="#tb" onclick="toggleLayer('entry147Trackback'); return false" title="리스트 보기/접기">
+								트랙백이 없습니다
+							</a>, 
+							<a id="commentCount147" href="#rp" onclick="loadComment(147,1); return false" title="리스트 보기/접기">
+								댓글이 없습니다
+							</a>
+					</div>
+
+					<div id="entry147Trackback" style="display:block">
+						<div class="trackback">
+							<p class="url"><dfn>Trackback <abbr title="Uniform Resource Locator">URL</abbr></dfn> : <span onclick="copyUrl('http://xinet.kr/tc/trackback/147', this)">http://xinet.kr/tc/trackback/147</span></p>
+							<p class="url"><dfn>Trackback <abbr title="Uniform Resource Locator">RSS</abbr></dfn> : http://xinet.kr/tc/rss/trackback/147</p>
+							<p class="url"><dfn>Trackback <abbr title="Uniform Resource Locator">ATOM</abbr></dfn> : http://xinet.kr/tc/atom/trackback/147</p>
+							
+						</div><!-- trackback End -->
+					</div>
+					<hr />
+
+					<div id="entry147Comment" style="display:none"></div>
+				</div><!-- entry End -->
+			
+</div><!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+      xmlns:dc="http://purl.org/dc/elements/1.1/"
+        xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+   rdf:about="http://xinet.kr/tc/147"
+   dc:identifier="http://xinet.kr/tc/147"
+   dc:title="WGET 옵션 정리"
+   trackback:ping="http://xinet.kr/tc/trackback/147" />
+</rdf:RDF>
+-->
+</div>
+
+			
+				<div id="paging">
+					<a href='/tc/148' title="이전" class="" id="prevPage">&#171; Prev </a> :
+					 <a href='/tc/228' class="num"><span>1</span></a> :  <span class="interword">...</span>  <a href='/tc/151' class="num"><span>78</span></a> :  <a href='/tc/150' class="num"><span>79</span></a> :  <a href='/tc/149' class="num"><span>80</span></a> :  <a href='/tc/148' class="num"><span>81</span></a> :  <a  class="num"><span class="selected" >82</span></a> :  <a href='/tc/146' class="num"><span>83</span></a> :  <a href='/tc/145' class="num"><span>84</span></a> :  <a href='/tc/144' class="num"><span>85</span></a> :  <a href='/tc/143' class="num"><span>86</span></a> :  <span class="interword">...</span>  <a href='/tc/1' class="num"><span>224</span></a> : 
+					<a href='/tc/146' title="다음" class="" id="nextPage">Next &#187;</a> 
+				</div>
+			
+		</div><!-- content End -->
+		<hr />
+		
+		<div id="sidebar">
+			
+					<!-- 블로그 이미지 -->
+					<div id="blogImage"><img src="/tc/resources/image/spacer.gif" alt="블로그 이미지" /></div>
+				
+					<!-- 블로그 정보 -->
+					<div id="blogDesc"> <br /><span class="userID">시골청년</span></div>
+				
+				<!-- 공지 -->
+					<div class="hslice" id="recentNoticeWebslice" style="margin:0;padding:0;">
+<h4 class="entry-title" style="visibility:hidden;height:0;margin:0;padding:0;"> - 최근 공지</h4>
+<div class="entry-content" style="margin:0;padding:0;">
+
+						<div id="notice">
+							<ul>
+								
+									<li><a href="/tc/notice/54">시골청년이란</a> </li>
+								
+							</ul>
+						</div>
+					
+</div>
+</div>
+
+				
+				<!-- 검색 -->
+					<div id="searchBox">
+						<form id="TTSearchForm" action="/tc/search/" method="get" onsubmit="return searchBlog()">
+							<input type="text" name="search" value="" onkeypress="if (event.keyCode == 13) { searchBlog() }"/>
+							<input value="검색" type="button" onclick="searchBlog()" class="submit"/>
+						</form>
+					</div>
+				
+				<!-- 카테고리 -->
+					<div id="category">
+						<h3>카테고리</h3>
+						<script type="text/javascript">
+	//<![CDATA[
+		var expanded = false;
+		function expandTree() {
+			expandFolder(2, true);
+			expandFolder(3, true);
+		}
+
+		function expandFolder(category, expand) {
+			var oLevel1 = document.getElementById("category_" + category);
+			var oImg = oLevel1.getElementsByTagName("img")[0];
+			switch (expand) {
+				case true:
+					oImg.src = "/tc/skin/tree/base/tab_opened.gif";
+					showLayer("category_" + category + "_children");
+					return true;
+				case false:
+					oImg.src = "/tc/skin/tree/base/tab_closed.gif";
+					hideLayer("category_" + category + "_children");
+					return true;
+			}
+			return false;
+		}
+
+		function toggleFolder(category) {
+			var oLevel1 = document.getElementById("category_" + category);
+			var oImg = oLevel1.getElementsByTagName("img")[0];
+			switch (oImg.src.substr(oImg.src.length - 10, 6)) {
+				case "isleaf":
+					return true;
+				case "closed":
+					oImg.src = "/tc/skin/tree/base/tab_opened.gif";
+					showLayer("category_" + category + "_children");
+					expanded = true;
+					return true;
+				case "opened":
+					oImg.src = "/tc/skin/tree/base/tab_closed.gif";
+					hideLayer("category_" + category + "_children");
+					expanded = false;
+					return true;
+			}
+			return false;
+		}
+		var selectedNode = 0;
+		function selectNode(category) {
+			try {
+				var root = document.getElementById('treeComponent');
+				var prevSelectedNode= root.getAttribute('currentselectednode');
+				var oLevel = document.getElementById("category_" + selectedNode);
+				var oChild = oLevel.getElementsByTagName("table")[0];
+
+				oChild.style.color = "#000000";
+				oChild.style.backgroundColor = ""
+				root.setAttribute('currentselectednode',category);
+				document.getElementById('text_'+selectedNode).style.color="#000000";
+
+				var oLevel = document.getElementById("category_" + category);
+				var oChild = oLevel.getElementsByTagName("table")[0];
+				oChild.style.color = "#FFFFFF";
+				oChild.style.backgroundColor = "#00ADEF"
+				document.getElementById('text_'+category).style.color="#FFFFFF";
+
+				selectedNode = category;
+			} catch(e) {
+				alert(e.message);
+			}
+
+		}
+
+		function setTreeStyle(skin) {
+			try {
+				treeNodes = document.getElementsByName("treeNode");
+				for(var i=0; i<treeNodes.length; i++) {
+					if( ('category_'+selectedNode) == (treeNodes[i].getAttribute('id').value) ) {
+						var oLevel = document.getElementById('category_'+i);
+						var oChild = oLevel.getElementsByTagName("table")[0];
+						oChild.style.color ='#'+skin['activeItemColor'];
+						if (skin['activeItemBgColor'] != '' && skin['activeItemBgColor'] != undefined) {
+							oChild.style.backgroundColor ='#'+skin['activeItemBgColor'];
+						} else {
+							oChild.style.backgroundColor ="";
+						}
+						alert(oChild.style.backgroundColor);
+					} else{
+						var oLevel = document.getElementById("category_" + i);
+						var oChild = oLevel.getElementsByTagName("table")[0];
+						oChild.style.color ='#'+skin['colorOnTree'];
+						oChild.style.backgroundColor ='#'+skin['bgcolorOnTree'];
+						var oLevel = document.getElementById('text_'+i).style.color='#'+skin['colorOnTree'];
+						alert(document.getElementById('text_'+i).style.color);
+				}
+				}
+			} catch(e) {
+				alert(e.message);
+			}
+		}
+	//]]>
+</script>
+		<table id="treeComponent"  cellpadding="0" cellspacing="0" style="width: 100%;"><tr>
+	<td>
+		<table id="category_0"  cellpadding="0" cellspacing="0"><tr>
+			<td class="ib" style="font-size: 1px"><img src="/tc/skin/tree/base/tab_top.gif" width="16" onclick="expandTree()" alt="" /></td>
+			<td valign="top" style="font-size:9pt; padding-left:3px">
+				<table onclick="" id="imp0" cellpadding="0" cellspacing="0" style=""><tr>
+										<td class="branch3" onclick="window.location.href='/tc/category'"><div id="text_0" style=" color: #000000;">전체 <span class="c_cnt">(224)</span></div></td>
+				</tr></table>
+			</td>
+		</tr></table>
+
+		<table   id="category_1" cellpadding="0" cellspacing="0"><tr>
+			<td class="ib" style="width:39px; font-size: 1px; background-image: url('/tc/skin/tree/base/navi_back_noactive.gif')"><a class="click" onclick="toggleFolder('1')"><img src="/tc/skin/tree/base/tab_isleaf.gif" width="39" alt="" /></a></td>
+			<td>
+				<table cellpadding="0" cellspacing="0" style=""><tr>
+					<td class="branch3" onclick="window.location.href='/tc/category/1'"><div id="text_1" style="color: #000000;">엔지니어 이야기 <span class="c_cnt">(2)</span></div></td>
+				</tr></table>
+			</td>
+		</tr></table>
+		<div id="category_1_children" style="display:none">
+		</div>
+		<table   id="category_2" cellpadding="0" cellspacing="0"><tr>
+			<td class="ib" style="width:39px; font-size: 1px; background-image: url('/tc/skin/tree/base/navi_back_noactive.gif')"><a class="click" onclick="toggleFolder('2')"><img src="/tc/skin/tree/base/tab_closed.gif" width="39" alt="" /></a></td>
+			<td>
+				<table cellpadding="0" cellspacing="0" style=""><tr>
+					<td class="branch3" onclick="window.location.href='/tc/category/2'"><div id="text_2" style="color: #000000;">리눅스 <span class="c_cnt">(132)</span></div></td>
+				</tr></table>
+			</td>
+		</tr></table>
+		<div id="category_2_children" style="display:none">
+				<table id="category_6"  cellpadding="0" cellspacing="0"><tr>
+				<td style="width:39px; font-size: 1px"><img src="/tc/skin/tree/base/navi_back_active.gif" width="17" height="18" alt="" /><img src="/tc/skin/tree/base/tab_treed.gif" width="22" alt="" /></td>
+				<td>
+					<table onclick="window.location.href='/tc/category/6'" cellpadding="0" cellspacing="0" style=""><tr>
+					<td class="branch3"><div id="text_6" style="color: #000000;">Apache <span class="c_cnt">(12)</span></div></td>
+					</tr></table>
+				</td>
+				</tr></table>
+				<table id="category_20"  cellpadding="0" cellspacing="0"><tr>
+				<td style="width:39px; font-size: 1px"><img src="/tc/skin/tree/base/navi_back_active.gif" width="17" height="18" alt="" /><img src="/tc/skin/tree/base/tab_treed.gif" width="22" alt="" /></td>
+				<td>
+					<table onclick="window.location.href='/tc/category/20'" cellpadding="0" cellspacing="0" style=""><tr>
+					<td class="branch3"><div id="text_20" style="color: #000000;">was <span class="c_cnt">(3)</span></div></td>
+					</tr></table>
+				</td>
+				</tr></table>
+				<table id="category_7"  cellpadding="0" cellspacing="0"><tr>
+				<td style="width:39px; font-size: 1px"><img src="/tc/skin/tree/base/navi_back_active.gif" width="17" height="18" alt="" /><img src="/tc/skin/tree/base/tab_treed.gif" width="22" alt="" /></td>
+				<td>
+					<table onclick="window.location.href='/tc/category/7'" cellpadding="0" cellspacing="0" style=""><tr>
+					<td class="branch3"><div id="text_7" style="color: #000000;">DNS <span class="c_cnt">(2)</span></div></td>
+					</tr></table>
+				</td>
+				</tr></table>
+				<table id="category_8"  cellpadding="0" cellspacing="0"><tr>
+				<td style="width:39px; font-size: 1px"><img src="/tc/skin/tree/base/navi_back_active.gif" width="17" height="18" alt="" /><img src="/tc/skin/tree/base/tab_treed.gif" width="22" alt="" /></td>
+				<td>
+					<table onclick="window.location.href='/tc/category/8'" cellpadding="0" cellspacing="0" style=""><tr>
+					<td class="branch3"><div id="text_8" style="color: #000000;">Mail <span class="c_cnt">(7)</span></div></td>
+					</tr></table>
+				</td>
+				</tr></table>
+				<table id="category_9"  cellpadding="0" cellspacing="0"><tr>
+				<td style="width:39px; font-size: 1px"><img src="/tc/skin/tree/base/navi_back_active.gif" width="17" height="18" alt="" /><img src="/tc/skin/tree/base/tab_treed.gif" width="22" alt="" /></td>
+				<td>
+					<table onclick="window.location.href='/tc/category/9'" cellpadding="0" cellspacing="0" style=""><tr>
+					<td class="branch3"><div id="text_9" style="color: #000000;">DB <span class="c_cnt">(20)</span></div></td>
+					</tr></table>
+				</td>
+				</tr></table>
+				<table id="category_10"  cellpadding="0" cellspacing="0"><tr>
+				<td style="width:39px; font-size: 1px"><img src="/tc/skin/tree/base/navi_back_active.gif" width="17" height="18" alt="" /><img src="/tc/skin/tree/base/tab_treed.gif" width="22" alt="" /></td>
+				<td>
+					<table onclick="window.location.href='/tc/category/10'" cellpadding="0" cellspacing="0" style=""><tr>
+					<td class="branch3"><div id="text_10" style="color: #000000;">Security <span class="c_cnt">(8)</span></div></td>
+					</tr></table>
+				</td>
+				</tr></table>
+				<table id="category_11"  cellpadding="0" cellspacing="0"><tr>
+				<td style="width:39px; font-size: 1px"><img src="/tc/skin/tree/base/navi_back_active.gif" width="17" height="18" alt="" /><img src="/tc/skin/tree/base/tab_treed.gif" width="22" alt="" /></td>
+				<td>
+					<table onclick="window.location.href='/tc/category/11'" cellpadding="0" cellspacing="0" style=""><tr>
+					<td class="branch3"><div id="text_11" style="color: #000000;">일반 <span class="c_cnt">(51)</span></div></td>
+					</tr></table>
+				</td>
+				</tr></table>
+				<table id="category_12"  cellpadding="0" cellspacing="0"><tr>
+				<td style="width:39px; font-size: 1px"><img src="/tc/skin/tree/base/navi_back_active.gif" width="17" height="18" alt="" /><img src="/tc/skin/tree/base/tab_treed.gif" width="22" alt="" /></td>
+				<td>
+					<table onclick="window.location.href='/tc/category/12'" cellpadding="0" cellspacing="0" style=""><tr>
+					<td class="branch3"><div id="text_12" style="color: #000000;">쉘 스크립트 <span class="c_cnt">(11)</span></div></td>
+					</tr></table>
+				</td>
+				</tr></table>
+				<table id="category_13"  cellpadding="0" cellspacing="0"><tr>
+				<td style="width:39px; font-size: 1px"><img src="/tc/skin/tree/base/navi_back_active.gif" width="17" height="18" alt="" /><img src="/tc/skin/tree/base/tab_treed_end.gif" width="22" alt="" /></td>
+				<td>
+					<table onclick="window.location.href='/tc/category/13'" cellpadding="0" cellspacing="0" style=""><tr>
+					<td class="branch3"><div id="text_13" style="color: #000000;">트러블 슈팅 <span class="c_cnt">(17)</span></div></td>
+					</tr></table>
+				</td>
+				</tr></table>
+		</div>
+		<table   id="category_3" cellpadding="0" cellspacing="0"><tr>
+			<td class="ib" style="width:39px; font-size: 1px; background-image: url('/tc/skin/tree/base/navi_back_noactive.gif')"><a class="click" onclick="toggleFolder('3')"><img src="/tc/skin/tree/base/tab_closed.gif" width="39" alt="" /></a></td>
+			<td>
+				<table cellpadding="0" cellspacing="0" style=""><tr>
+					<td class="branch3" onclick="window.location.href='/tc/category/3'"><div id="text_3" style="color: #000000;">윈도우 <span class="c_cnt">(63)</span></div></td>
+				</tr></table>
+			</td>
+		</tr></table>
+		<div id="category_3_children" style="display:none">
+				<table id="category_14"  cellpadding="0" cellspacing="0"><tr>
+				<td style="width:39px; font-size: 1px"><img src="/tc/skin/tree/base/navi_back_active.gif" width="17" height="18" alt="" /><img src="/tc/skin/tree/base/tab_treed.gif" width="22" alt="" /></td>
+				<td>
+					<table onclick="window.location.href='/tc/category/14'" cellpadding="0" cellspacing="0" style=""><tr>
+					<td class="branch3"><div id="text_14" style="color: #000000;">IIS <span class="c_cnt">(24)</span></div></td>
+					</tr></table>
+				</td>
+				</tr></table>
+				<table id="category_15"  cellpadding="0" cellspacing="0"><tr>
+				<td style="width:39px; font-size: 1px"><img src="/tc/skin/tree/base/navi_back_active.gif" width="17" height="18" alt="" /><img src="/tc/skin/tree/base/tab_treed.gif" width="22" alt="" /></td>
+				<td>
+					<table onclick="window.location.href='/tc/category/15'" cellpadding="0" cellspacing="0" style=""><tr>
+					<td class="branch3"><div id="text_15" style="color: #000000;">DB <span class="c_cnt">(19)</span></div></td>
+					</tr></table>
+				</td>
+				</tr></table>
+				<table id="category_16"  cellpadding="0" cellspacing="0"><tr>
+				<td style="width:39px; font-size: 1px"><img src="/tc/skin/tree/base/navi_back_active.gif" width="17" height="18" alt="" /><img src="/tc/skin/tree/base/tab_treed_end.gif" width="22" alt="" /></td>
+				<td>
+					<table onclick="window.location.href='/tc/category/16'" cellpadding="0" cellspacing="0" style=""><tr>
+					<td class="branch3"><div id="text_16" style="color: #000000;">일반 <span class="c_cnt">(19)</span></div></td>
+					</tr></table>
+				</td>
+				</tr></table>
+		</div>
+		<table   id="category_21" cellpadding="0" cellspacing="0"><tr>
+			<td class="ib" style="width:39px; font-size: 1px; background-image: url('/tc/skin/tree/base/navi_back_noactive.gif')"><a class="click" onclick="toggleFolder('21')"><img src="/tc/skin/tree/base/tab_isleaf.gif" width="39" alt="" /></a></td>
+			<td>
+				<table cellpadding="0" cellspacing="0" style=""><tr>
+					<td class="branch3" onclick="window.location.href='/tc/category/21'"><div id="text_21" style="color: #000000;">오라클 <span class="c_cnt">(2)</span></div></td>
+				</tr></table>
+			</td>
+		</tr></table>
+		<div id="category_21_children" style="display:none">
+		</div>
+		<table   id="category_4" cellpadding="0" cellspacing="0"><tr>
+			<td class="ib" style="width:39px; font-size: 1px; background-image: url('/tc/skin/tree/base/navi_back_noactive.gif')"><a class="click" onclick="toggleFolder('4')"><img src="/tc/skin/tree/base/tab_isleaf.gif" width="39" alt="" /></a></td>
+			<td>
+				<table cellpadding="0" cellspacing="0" style=""><tr>
+					<td class="branch3" onclick="window.location.href='/tc/category/4'"><div id="text_4" style="color: #000000;">네트워크 <span class="c_cnt">(7)</span></div></td>
+				</tr></table>
+			</td>
+		</tr></table>
+		<div id="category_4_children" style="display:none">
+		</div>
+		<table   id="category_19" cellpadding="0" cellspacing="0"><tr>
+			<td class="ib" style="width:39px; font-size: 1px; background-image: url('/tc/skin/tree/base/navi_back_noactive.gif')"><a class="click" onclick="toggleFolder('19')"><img src="/tc/skin/tree/base/tab_isleaf.gif" width="39" alt="" /></a></td>
+			<td>
+				<table cellpadding="0" cellspacing="0" style=""><tr>
+					<td class="branch3" onclick="window.location.href='/tc/category/19'"><div id="text_19" style="color: #000000;">국제트래픽 <span class="c_cnt">(2)</span></div></td>
+				</tr></table>
+			</td>
+		</tr></table>
+		<div id="category_19_children" style="display:none">
+		</div>
+		<table   id="category_5" cellpadding="0" cellspacing="0"><tr>
+			<td class="ib" style="width:39px; font-size: 1px; background-image: url('/tc/skin/tree/base/navi_back_noactive.gif')"><a class="click" onclick="toggleFolder('5')"><img src="/tc/skin/tree/base/tab_isleaf.gif" width="39" alt="" /></a></td>
+			<td>
+				<table cellpadding="0" cellspacing="0" style=""><tr>
+					<td class="branch3" onclick="window.location.href='/tc/category/5'"><div id="text_5" style="color: #000000;">아이폰 <span class="c_cnt">(4)</span></div></td>
+				</tr></table>
+			</td>
+		</tr></table>
+		<div id="category_5_children" style="display:none">
+		</div>
+		<table   id="category_17" cellpadding="0" cellspacing="0"><tr>
+			<td class="ib" style="width:39px; font-size: 1px; background-image: url('/tc/skin/tree/base/navi_back_noactive.gif')"><a class="click" onclick="toggleFolder('17')"><img src="/tc/skin/tree/base/tab_isleaf.gif" width="39" alt="" /></a></td>
+			<td>
+				<table cellpadding="0" cellspacing="0" style=""><tr>
+					<td class="branch3" onclick="window.location.href='/tc/category/17'"><div id="text_17" style="color: #000000;">관심분야 <span class="c_cnt">(1)</span></div></td>
+				</tr></table>
+			</td>
+		</tr></table>
+		<div id="category_17_children" style="display:none">
+		</div>
+		<table   id="category_18" cellpadding="0" cellspacing="0"><tr>
+			<td class="ib" style="width:39px; font-size: 1px; background-image: url('/tc/skin/tree/base/navi_back_noactive_end.gif')"><a class="click" onclick="toggleFolder('18')"><img src="/tc/skin/tree/base/tab_isleaf.gif" width="39" alt="" /></a></td>
+			<td>
+				<table cellpadding="0" cellspacing="0" style=""><tr>
+					<td class="branch3" onclick="window.location.href='/tc/category/18'"><div id="text_18" style="color: #000000;">맛집 <span class="c_cnt">(0)</span></div></td>
+				</tr></table>
+			</td>
+		</tr></table>
+		<div id="category_18_children" style="display:none">
+		</div>
+	</td></tr></table>
+
+					</div>
+				
+				<!-- 태그 -->
+					<div id="tagbox">
+						<h3>태그</h3>
+						<ul>
+							
+								<li><a href="/tc/tag/25" class="cloud5"> L4</a></li>
+							
+								<li><a href="/tc/tag/43" class="cloud5"> myisamchk</a></li>
+							
+								<li><a href="/tc/tag/52" class="cloud5"> iis7.0 보안ssl</a></li>
+							
+								<li><a href="/tc/tag/42" class="cloud5"> 무선공유기</a></li>
+							
+								<li><a href="/tc/tag/46" class="cloud5"> 패스워드복구</a></li>
+							
+								<li><a href="/tc/tag/40" class="cloud3"> sfacctd</a></li>
+							
+								<li><a href="/tc/tag/54" class="cloud5"> SAMBA</a></li>
+							
+								<li><a href="/tc/tag/29" class="cloud5"> amp셋팅</a></li>
+							
+								<li><a href="/tc/tag/67" class="cloud5"> awk sum</a></li>
+							
+								<li><a href="/tc/tag/24" class="cloud5"> 로드밸런싱</a></li>
+							
+								<li><a href="/tc/tag/13" class="cloud5"> bind</a></li>
+							
+								<li><a href="/tc/tag/37" class="cloud5"> free</a></li>
+							
+								<li><a href="/tc/tag/55" class="cloud5"> www</a></li>
+							
+								<li><a href="/tc/tag/30" class="cloud5"> dovecot</a></li>
+							
+								<li><a href="/tc/tag/23" class="cloud5"> openfire</a></li>
+							
+								<li><a href="/tc/tag/70" class="cloud3"> yum</a></li>
+							
+								<li><a href="/tc/tag/38" class="cloud3"> 광케이블</a></li>
+							
+								<li><a href="/tc/tag/64" class="cloud5"> roundcube</a></li>
+							
+								<li><a href="/tc/tag/58" class="cloud5"> ip_conntrack</a></li>
+							
+								<li><a href="/tc/tag/14" class="cloud5"> 암호인증</a></li>
+							
+						</ul>
+					</div>
+				
+				<!-- 작성자 -->
+				<div id="authorList">
+					<h3>작성자</h3>
+					<ul>
+						
+						<li>
+							<a href="/tc/author/%EC%8B%9C%EA%B3%A8%EC%B2%AD%EB%85%84">
+								시골청년
+							</a>
+						</li>
+						
+					</ul>
+				</div>
+				
+				<!-- 새로 등록된 글 -->
+					<div id="recentPost">
+						<h3>새로 등록된 글</h3>
+						<ul>
+							
+								<li>
+									<a href="/tc/228">
+										ASP ms-sql 데이터베이스 연... <span class="cnt"><span id="commentCountOnRecentEntries228"></span></span>
+										<!-- <cite>By </cite> -->
+									</a>
+								</li>
+							
+								<li>
+									<a href="/tc/227">
+										No package 'xtables' found <span class="cnt"><span id="commentCountOnRecentEntries227"></span></span>
+										<!-- <cite>By </cite> -->
+									</a>
+								</li>
+							
+								<li>
+									<a href="/tc/226">
+										php5.x IMAP  설치 <span class="cnt"><span id="commentCountOnRecentEntries226"></span></span>
+										<!-- <cite>By </cite> -->
+									</a>
+								</li>
+							
+								<li>
+									<a href="/tc/225">
+										CENTOS IMAP INSTALL <span class="cnt"><span id="commentCountOnRecentEntries225"></span></span>
+										<!-- <cite>By </cite> -->
+									</a>
+								</li>
+							
+								<li>
+									<a href="/tc/224">
+										geoip virtualhost 특정 계... <span class="cnt"><span id="commentCountOnRecentEntries224"></span></span>
+										<!-- <cite>By </cite> -->
+									</a>
+								</li>
+							
+								<li>
+									<a href="/tc/223">
+										CENTOS 6 rrdtool install <span class="cnt"><span id="commentCountOnRecentEntries223"></span></span>
+										<!-- <cite>By </cite> -->
+									</a>
+								</li>
+							
+								<li>
+									<a href="/tc/222">
+										asp 현재 아이피 확인 소스 <span class="cnt"><span id="commentCountOnRecentEntries222"></span></span>
+										<!-- <cite>By </cite> -->
+									</a>
+								</li>
+							
+								<li>
+									<a href="/tc/221">
+										yum geoip install 설치 에... <span class="cnt"><span id="commentCountOnRecentEntries221"></span></span>
+										<!-- <cite>By </cite> -->
+									</a>
+								</li>
+							
+								<li>
+									<a href="/tc/220">
+										dovecot  tried to use disa... <span class="cnt"><span id="commentCountOnRecentEntries220"></span></span>
+										<!-- <cite>By </cite> -->
+									</a>
+								</li>
+							
+								<li>
+									<a href="/tc/219">
+										centos 6.x  mhash mcrypt <span class="cnt"><span id="commentCountOnRecentEntries219"></span></span>
+										<!-- <cite>By </cite> -->
+									</a>
+								</li>
+							
+						</ul>
+					</div>
+				
+				<!-- 새로 등록된 댓글 -->
+					<div id="recentComment">
+						<h3>새로 등록된 댓글</h3>
+						<ul id="recentComments">
+							
+								<li>
+									<a href="/tc/180?commentId=11#comment11">
+										DB 같이 쓰기 공유를 해주었...<br />
+										<cite class="cntx">namo 09/05</cite>
+									</a>
+								</li>
+							
+								<li>
+									<a href="/tc/207?commentId=10#comment10">
+										관리자만 볼 수 있는 댓글입...<br />
+										<cite class="cntx">비밀방문자 08/03</cite>
+									</a>
+								</li>
+							
+								<li>
+									<a href="/tc/173?commentId=9#comment9">
+										좋은 정보 감사합니다 ^^<br />
+										<cite class="cntx">poorog 06/12</cite>
+									</a>
+								</li>
+							
+								<li>
+									<a href="/tc/148?commentId=8#comment8">
+										좋은정보감사합니다<br />
+										<cite class="cntx">재원 05/22</cite>
+									</a>
+								</li>
+							
+								<li>
+									<a href="/tc/136?commentId=7#comment7">
+										linux-php에서 덩치큰 오라...<br />
+										<cite class="cntx">spectator 2011</cite>
+									</a>
+								</li>
+							
+						</ul>
+					</div>
+				
+				<!-- 새로 등록된 트랙백 -->
+					<div id="recentTrackback">
+						<h3>새로 등록된 트랙백</h3>
+						<ul>
+							
+						</ul>
+					</div>
+				
+				<!-- 글 보관함 -->
+					<div id="archive">
+						<h3>글 보관함</h3>
+						<ul>
+							
+								<li>
+									<a href="/tc/archive/201210">2012/10 </a>
+									<span class="cnt">(1)</span>
+								</li>
+							
+								<li>
+									<a href="/tc/archive/201209">2012/09 </a>
+									<span class="cnt">(4)</span>
+								</li>
+							
+								<li>
+									<a href="/tc/archive/201208">2012/08 </a>
+									<span class="cnt">(5)</span>
+								</li>
+							
+								<li>
+									<a href="/tc/archive/201207">2012/07 </a>
+									<span class="cnt">(6)</span>
+								</li>
+							
+								<li>
+									<a href="/tc/archive/201206">2012/06 </a>
+									<span class="cnt">(10)</span>
+								</li>
+							
+						</ul>
+					</div>
+				
+				<!-- 달력 -->
+					<div id="calendar">
+						<h3>달력</h3>
+						<table class="tt-calendar" cellpadding="0" cellspacing="1" style="width: 100%; table-layout: fixed">
+	<caption class="cal_month">
+		<a href="/tc/archive/201209" title="1개월 앞의 달력을 보여줍니다.">&laquo;</a>
+		&nbsp;
+		<a href="/tc/archive/201210" title="현재 달의 달력을 보여줍니다.">2012/10</a>
+		&nbsp;
+		<a href="/tc/archive/201211" title="1개월 뒤의 달력을 보여줍니다.">&raquo;</a>
+	</caption>
+	<thead>
+		<tr>
+			<th class="cal_week2">일</th>
+			<th class="cal_week1">월</th>
+			<th class="cal_week1">화</th>
+			<th class="cal_week1">수</th>
+			<th class="cal_week1">목</th>
+			<th class="cal_week1">금</th>
+			<th class="cal_week1">토</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="cal_week">
+			<td class="cal_day1">&nbsp;</td>
+			<td class=" cal_day cal_day3">1</td>
+			<td class=" cal_day cal_day3">2</td>
+			<td class=" cal_day cal_day3">3</td>
+			<td class=" cal_day cal_day3">4</td>
+			<td class=" cal_day cal_day3">5</td>
+			<td class=" cal_day cal_day3">6</td>
+		</tr>
+		<tr class="cal_week">
+			<td class=" cal_day cal_day_sunday cal_day3">7</td>
+			<td class=" cal_day cal_day3">8</td>
+			<td class=" cal_day cal_day3">9</td>
+			<td class=" cal_day cal_day3"><a class="cal_click" href="/tc/archive/20121010">10</a></td>
+			<td class=" cal_day cal_day3">11</td>
+			<td class=" cal_day cal_day3">12</td>
+			<td class=" cal_day cal_day3">13</td>
+		</tr>
+		<tr class="cal_week cal_current_week">
+			<td class=" cal_day cal_day_sunday cal_day3">14</td>
+			<td class=" cal_day cal_day3">15</td>
+			<td class=" cal_day cal_day4">16</td>
+			<td class=" cal_day cal_day3">17</td>
+			<td class=" cal_day cal_day3">18</td>
+			<td class=" cal_day cal_day3">19</td>
+			<td class=" cal_day cal_day3">20</td>
+		</tr>
+		<tr class="cal_week">
+			<td class=" cal_day cal_day_sunday cal_day3">21</td>
+			<td class=" cal_day cal_day3">22</td>
+			<td class=" cal_day cal_day3">23</td>
+			<td class=" cal_day cal_day3">24</td>
+			<td class=" cal_day cal_day3">25</td>
+			<td class=" cal_day cal_day3">26</td>
+			<td class=" cal_day cal_day3">27</td>
+		</tr>
+		<tr class="cal_week">
+			<td class=" cal_day cal_day_sunday cal_day3">28</td>
+			<td class=" cal_day cal_day3">29</td>
+			<td class=" cal_day cal_day3">30</td>
+			<td class=" cal_day cal_day3">31</td>
+			<td class="cal_day2">&nbsp;</td>
+			<td class="cal_day2">&nbsp;</td>
+			<td class="cal_day2">&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+
+					</div>
+				
+				<!-- 링크 -->
+					<div id="link">
+						<h3>링크</h3>
+						<ul>
+</ul>
+
+					</div>
+
+					<!-- 기존 스타일의 링크를 사용하고 싶으면 위의 [## _link_list_ ##]가 있는 곳을 지우고 아래 형식을 사용해 주십시오. -->
+<!--					<div id="link">
+						<h3>링크</h3>
+							<ul>
+								
+							</ul>
+					</div>-->
+				
+
+			
+				<!-- RSS Feed -->
+				<div id="btnRSS">
+					<a href="http://xinet.kr/tc/rss" class="rss" rel="alternate" type="application/rss+xml">
+					<img src="/tc/skin/blog/ReinerSchwarzKoreanisch/images/rss.gif" alt="RSS"/> </a>
+					<a href="http://xinet.kr/tc/rss/response" class="rss" rel="alternate" type="application/rss+xml">
+					<img src="/tc/skin/blog/ReinerSchwarzKoreanisch/images/rssresponse.gif" alt="Comment RSS"/> </a><br />
+					<a href="http://xinet.kr/tc/atom" class="atom" rel="alternate" type="application/atom+xml">
+					<img src="/tc/skin/blog/ReinerSchwarzKoreanisch/images/atom.gif" alt="Atom"/></a>
+					<a href="http://xinet.kr/tc/atom/response" class="atom_response" rel="alternate" type="application/atom+xml">
+					<img src="/tc/skin/blog/ReinerSchwarzKoreanisch/images/atomresponse.gif" alt="Comment Atom"/></a>
+				</div>
+				<div style="overflow:hidden; width:100%; text-align:center" ><img src="/tc/plugins/StatGraph/count/count.php?blogid=1" alt="Statistics Graph" title="Blog Visitors" /></div>
+				<!-- 관리자 -->
+					<div id="adminMenu">
+						<ul>
+							<li class="tab_admin">
+								<a href="/tc/owner"><img src="/tc/skin/blog/ReinerSchwarzKoreanisch/images/btn_admin.gif" alt="관리자 로그인" /> </a></li>
+							<li class="tab_write">
+								<a href="/tc/owner/entry/post"><img src="/tc/skin/blog/ReinerSchwarzKoreanisch/images/btn_write.gif" alt="새 글 작성" /> </a></li>
+						</ul>
+					</div>
+				
+		</div><!-- Sidebar End -->
+		<hr />
+
+	<div id="footer">
+		<address class="copyright">
+			Powered by <a href="http://www.textcube.org/" onclick="window.open(this.href); return false">Textcube</a>.
+			Original designed by <a href="http://www.tistory.com/" onclick="window.open(this.href); return false">Tistory</a>.
+		</address>
+	</div>
+	
+	<!--<p id="adrule">
+		<a href="#" title="광고 목적의 댓글 및 트랙백에 대한 경고" onclick="window.open(this.href); return false">이 사이트는 광고 목적의 댓글, 트랙백을 거부합니다.</a><br />
+		<a href="#" title="메일주소 수집 거부" onclick="window.open(this.href); return false">이 사이트에서의 메일 주소 무단 수집을 거부합니다.</a><br />
+		이를 무시하고 광고 목적의 댓글 및 트랙백을 남기거나 메일 주소 무단 수집이 발견될 시, <br />
+		관련법에 의거하여 처벌받을 수 있습니다. [2007.05.18. Updated]
+	</p>-->	
+	<!--<p id="adrule">
+		<a href="#" title="迷惑コメントや記事送信への警告" onclick="window.open(this.href); return false">このサイトは迷惑コメントや記事送信をお断りします。</a><br />
+		<a href="#" title="メールアドレス収集拒否" onclick="window.open(this.href); return false">このサイトからのメールアドレス収集をお断りします。</a><br />
+		この告知を無視し、迷惑コメントの作成や記事の転送、またはメールアドレス収集行為が見つかる場合、<br />
+		関連法律による法的対応ができます。[2007.05.18. Updated]
+	</p>-->	
+	<!--<p id="adrule">
+		<a href="#" title="Warn for the commercial Comments and Trackbacks." onclick="window.open(this.href); return false">We refuse to the commercial Comments and Trackbacks.</a><br />
+		<a href="#" title="Warn for the commercial Email Address Collections." onclick="window.open(this.href); return false">We prohibit to the commercial Email Address Collections.</a><br />
+		If you are against these notice, we can lay a formal complaint before the police.<br />
+		[May 18. 2007 Updated]
+	</p>-->
+	<!--<p id="adrule">
+		<a href="#" title="Warnung für den kommerziellen Kommentare und Trackbacks." onclick="window.open(this.href); return false">Wir verweigern die kommerzielle Kommentare und Trackbacks.</a><br />
+		<a href="#" title="Warnung für die Email-adresse Sammlung für commercials." onclick="window.open(this.href); return false">Wir verweigern die Email-adresse Sammlung für commercials.</a><br />
+		Wenn Sie diese Richtlinien ignorieren, wir können eine formale Beschwerde vor der Police vornehmen.<br />
+		[Mai 18. 2007 Aktualisiert]
+	</p>-->
+
+	</div><!-- container End -->
+
+	<script type="text/javascript">
+		//<![CDATA[
+			updateFeed();
+		//]]>
+	</script>
+<script language="JavaScript" type="text/javascript">
+//<![CDATA[
+	if(apiEolinURL.length > 0){
+		for(i=0;i<apiEolinURL.length;i++){
+			loadScript(apiEolinURL[i]);
+		}
+	}
+//]]>
+</script>
+</body>
+</html>

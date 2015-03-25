@@ -1,0 +1,93 @@
+{%  extends 'admin_base.html' %}
+{% block external %}
+<link rel="stylesheet" href="/stylesheet/themes/base/jquery.ui.all.css">
+
+  <script src="/scripts/jquery-1.8.0.js"></script>
+  
+
+  
+  <script>
+  </script>
+{% endblock %}
+{%  block content %}
+
+<form method="POST" action="." enctype="multipart/form-data">
+
+<table>
+  <tbody>
+
+   
+    <tr>
+      <th>* TYPE</th>
+      <td>
+        {{app.app_type}}
+      </td>
+    </tr>
+    <tr>
+      <th>카테고리</th>
+      <td>
+        {{app.category.category}}
+      </td>
+    </tr>
+    <tr>
+      <th>App 이름</th>
+      <td>
+        {{app.app_name}}
+      </td>
+    </tr>
+     <tr>
+      <th width="20%">* 바로가기 주소</th>
+      <td>
+        <a href="{{app.url}}" target="_blank">{{app.url}}</a>
+      </td>
+    </tr>
+    <tr>
+      <th>프로필 이미지</th>
+      <td><div class="profile_wrap"><img src="{{app.profile}}" alt="프로필 이미지"/></div></td>
+    </tr>
+    <tr>
+      <th>커버 이미지</th>
+      <td><div class="cover_wrap"><img src="{{app.cover}}" alt="커버 이미지" /></div></td>
+    </tr>
+   
+    <tr>
+      <th>App 소개(목록)</th>
+      <td>
+        {{app.info_short}}
+      </td>
+    </tr>
+    <tr>
+      <th>App 소개(상세)</th>
+      <td>
+        {{app.info_long}}
+      </td>
+    </tr> 
+    <tr>
+      <th>App 소개(목록)[한글]</th>
+      <td>
+        {{app.info_short_kor}}
+      </td>
+    </tr>
+    <tr>
+      <th>App 소개(상세)[한글]</th>
+      <td>
+        {{app.info_long_kor}}
+      </td>
+    </tr> 
+
+    <tr>
+     
+      <td colspan="2">
+        <a href="/admin/apps/delete/{{app.id}}" class="btn danger">삭제</a>
+        <a href="/admin/apps/modify/{{app.id}}" class="btn success">수정</a>
+        <a href="/admin/apps/1" class="btn">목록</a>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+</form>
+
+{% endblock %}
+{% block add %}{% endblock %}
+
